@@ -1,0 +1,177 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: #a37800;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* Simplify colors: neutral dark grey backgrounds and white text for all modules
+   (slightly more transparent) */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#window,
+#workspaces,
+button,
+#workspaces button,
+#workspaces button.focused,
+#workspaces button.urgent,
+#power-profiles-daemon.performance,
+#power-profiles-daemon.balanced,
+#power-profiles-daemon.power-saver,
+#battery.charging,
+#battery.plugged,
+#battery.critical:not(.charging),
+#network.disconnected,
+#pulseaudio.muted,
+#wireplumber.muted,
+#mpd.disconnected,
+#mpd.stopped,
+#mpd.paused,
+#tray > .needs-attention,
+#privacy-item.screenshare,
+#privacy-item.audio-in,
+#privacy-item.audio-out {
+    background-color: rgba(43, 48, 59, 0.75);
+    color: #ffffff;
+    box-shadow: none;
+}
+
+/* Make modules less cramped: use margins for spacing (Waybar doesn't accept `display` here) */
+window#waybar .left > *,
+window#waybar .center > *,
+window#waybar .right > * {
+    margin-right: 8px;    /* space between modules */
+}
+
+/* Remove trailing margin on last items */
+window#waybar .left > *:last-child,
+window#waybar .center > *:last-child,
+window#waybar .right > *:last-child {
+    margin-right: 0;
+}
+
+/* Apply slightly reduced padding to make the bar thinner and give a bit of breathing room */
+button,
+#workspaces button,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#window {
+    padding: 4px 10px;   /* vertical | horizontal padding (reduced for a thinner bar) */
+    min-width: 48px;     /* avoid very narrow boxes */
+    border-radius: 4px;  /* subtle rounding */
+}
+
+/* Slightly reduce overall bar vertical padding (thinner bar) */
+window#waybar {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* Keep hover underline but preserve new spacing */
+button:hover,
+#workspaces button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}

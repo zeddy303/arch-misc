@@ -1,0 +1,19 @@
+    <?xml version="1.0" encoding="UTF-8"?>
+    <menu>
+        <item action="systemctl poweroff">
+            <icon name="system-shutdown"/>
+            <label>Shutdown</label>
+        </item>
+        <item action="systemctl reboot">
+            <icon name="system-reboot"/>
+            <label>Reboot</label>
+        </item>
+        <item action="systemctl suspend">
+            <icon name="system-suspend"/>
+            <label>Suspend</label>
+        </item>
+        <item action="loginctl terminate-session $XDG_SESSION_ID">
+            <icon name="system-log-out"/>
+            <label>Logout</label>
+        </item>
+    </menu>
